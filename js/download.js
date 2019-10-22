@@ -6,7 +6,7 @@ $('button').click(function(){
     $.get(url, function(data, status){
         var html = data.toString();
         var tag = html.match(regex_url);
-        var url_video= tag[1].replace('"', '').replace('"', '');    
+        var url_video = tag[1].replace('"', '').replace('"', '');    
 
         fetch(url_video)
             .then(resp => resp.blob())
@@ -20,8 +20,9 @@ $('button').click(function(){
                 a.download = 'video.mp4';
                 document.body.appendChild(a);
                 a.click();
+
                 window.URL.revokeObjectURL(url);
-                alert('Download Realizado com Sucesso!'); // or you know, something with better UX...
+                alert('Download Realizado com Sucesso!');
             })
         .catch(() => alert('Poxa vida, Ocorreu um erro :('));
     });
