@@ -5,8 +5,6 @@ $('button').click(function(){
 
     $.get(url, function(data, status){
         var html = data.toString();
-
-        console.log(html);
         var tag = html.match(regex_url);
         var url_video = tag[1].replace('"', '').replace('"', '');    
 
