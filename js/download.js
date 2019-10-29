@@ -1,10 +1,12 @@
-var regex_url= /("http[s]?:\/\/)?instagram.fcgh7-1(.*")/g;
+var regex_url= /("http[s]?:\/\/)?instagram.fsdu17-1(.*")/g;
  
 $('button').click(function(){
     var url = $('input').val(); 
 
     $.get(url, function(data, status){
         var html = data.toString();
+
+        console.log(html);
         var tag = html.match(regex_url);
         var url_video = tag[1].replace('"', '').replace('"', '');    
 
