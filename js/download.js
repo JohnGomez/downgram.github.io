@@ -1,4 +1,4 @@
-var regex_url= /("http[s]?:\/\/)?instagram.fsdu17-1(.*")/g;
+var regex_url= /("http[s]?:\/\/)?instagram.f(.*")/g;
  
 $('button').click(function(){
     var url = $('input').val(); 
