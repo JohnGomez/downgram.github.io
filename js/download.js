@@ -1,4 +1,4 @@
-var regex_url= /("http[s]?:\/\/)?instagram.f(.*")/g;
+var regex_url = /(<\s*meta property=\"og:video:secure_url\"[^>]*>)/g;
  
 $('button').click(function(){
     var url = $('input').val(); 
@@ -6,7 +6,9 @@ $('button').click(function(){
     $.get(url, function(data, status){
         var html = data.toString();
         var tag = html.match(regex_url);
-        var url_video = tag[1].replace('"', '').replace('"', '');    
+        
+        var html_tag = $.parseHTML(tag[0]);
+        var url_video = html_tag[0].content.replace('"', '').replace('"', '');       
 
         fetch(url_video)
             .then(resp => resp.blob())
@@ -28,4 +30,5 @@ $('button').click(function(){
     });
 }
 );
+
 
