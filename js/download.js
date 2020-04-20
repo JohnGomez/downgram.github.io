@@ -1,6 +1,6 @@
 var regex_url = /(<\s*meta property=\"og:video:secure_url\"[^>]*>)/g;
  
-$('button').click(function(){
+$('#download').click(function(){
     var url = $('input').val(); 
 
     $.get(url, function(data, status){
