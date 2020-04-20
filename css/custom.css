@@ -11,7 +11,7 @@ header {
 }
 
 img {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 body {
@@ -32,4 +32,20 @@ body {
 
 section {
     padding: 50px 0;
+}
+
+.invisible-card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border-radius: .25rem;
+}
+
+.social-links {
+  text-align: center;
 }
